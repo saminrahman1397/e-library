@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e7cfb4;
+}
+
+/* Top header bar */
+.top-bar {
+    background-color: #563232;
+    height: 80px; /* increase height */
+    display: flex;
+    padding: 0 30px;
+    color: white;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Center container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+/* Card box */
+.auth-box {
+    background: #fff;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Heading */
+.auth-box h2 {
+    margin-bottom: 5px;
+}
+
+.auth-box p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Inputs */
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button */
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4c98a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background-color: #3b7c89;
+}
+
+/* Bottom text */
+.bottom-text {
+    margin-top: 15px;
+    font-size: 13px;
+}

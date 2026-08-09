@@ -1,0 +1,154 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#e84a5f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo{
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.menu li a{
+    color:white;
+    text-decoration:none;
+    font-size:24px;
+}
+
+/* PAGE TITLE */
+.page-title{
+    text-align:center;
+    margin:40px 0;
+    font-size:36px;
+    color:#2c7be5;
+    letter-spacing:2px;
+}
+
+/* GRID */
+.food-container{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    padding:0 80px 50px;
+}
+
+/* CARD */
+.food-card{
+    border:1px solid #ddd;
+    padding:15px;
+    text-align:center;
+    border-radius:5px;
+    background:#f8f8f8;
+}
+
+.food-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+/* TEXT */
+.food-card h3{
+    margin:10px 0 5px;
+}
+
+.price{
+    color:red;
+    font-weight:bold;
+}
+
+/* INPUT */
+.qty{
+    width:50px;
+    padding:5px;
+    margin:10px 0;
+}
+
+/* BUTTON */
+.btn{
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+    border-radius:3px;
+}
+
+.btn:hover{
+    background:#45a049;
+}
+
+/* FOOTER */
+
+.site-footer{
+    margin-top: 50px;
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    background:#e84a5f;
+}
+
+.footer-container{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left p{
+    margin: 5px 0;
+}
+
+.footer-right{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.cart-wrapper{
+    width: 70%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.cart-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.cart-table th, .cart-table td{
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart-title{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
