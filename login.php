@@ -7,23 +7,22 @@ if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE email='$email'";
+    $sql = "SELECT * FROM MEMBER WHERE Email='$email'";
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)==1){
 
-        $user = mysqli_fetch_assoc($result);
+        $member = mysqli_fetch_assoc($result);
 
-        if(password_verify($password,$user['password'])){
+        if(password_verify($password,$member['Password'])){
 
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['fullname'];
+            $_SESSION['member_id'] = $member['Member_ID'];
+            $_SESSION['member_name'] = $member['Full_Name'];
 
             header("Location: home.php");
             exit();
         }
     }
-
 
     $error = "Invalid email or password!";
 }
@@ -42,7 +41,7 @@ if(isset($_POST['login'])){
 
 <!-- TOP HEADER -->
 <div class="top-bar">
-    E-Library
+    Library Hub
 </div>
 
 <!-- LOGIN CENTER -->
@@ -51,25 +50,24 @@ if(isset($_POST['login'])){
     <div class="login-box">
 
         <h2>Sign in to your account</h2>
-        <p>Please enter your Id and password to log in.</p>
+        <p>Please enter your email and password to log in.</p>
 
         <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
 
         <form method="POST">
 
-            <input type="email" name="email" placeholder="Enter your gmail:" required>
+            <input type="email" name="email" placeholder="Enter your email:" required>
 
             <div>
-                <input type="password" name="password" placeholder="Pass" required>
-                <a class="forgot" href="#">I forgot my password</a>
+                <input type="password" name="password" placeholder="Password" required>
             </div>
 
-            <button type="submit" name="login">Login ➜</button>
+            <button type="submit" name="login">Login &#8594;</button>
 
-	<p style="text-align:center; margin-top:15px;">
-   		 Don't have an account? 
-    		<a href="register.php">Register</a>
-	</p>
+            <p style="text-align:center; margin-top:15px;">
+                Don't have an account?
+                <a href="register.php">Register</a>
+            </p>
 
         </form>
 
