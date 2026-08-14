@@ -54,7 +54,7 @@ body{
     padding:15px;
     text-align:center;
     border-radius:5px;
-    background:#f8f8f8;
+    background:#bfb2a1;
 }
 
 .food-card img{
@@ -132,5 +132,5 @@ body{
 .cart-table th, .cart-table td{
     padding: 12px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid black;
 }
