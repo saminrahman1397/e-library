@@ -64,6 +64,7 @@ if(!isset($_SESSION['member_id'])){
         <li><a href="home.php">Home</a></li>
         <li><a href="dashboard.php">Books</a></li>
         <li><a href="my_borrowings.php">My Borrowings</a></li>
+        <li><a href="my_fines.php">My Fines</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </div>
@@ -107,7 +108,7 @@ if(!isset($_SESSION['member_id'])){
             <p>Independent University, Bangladesh</p>
         </div>
         <div class="footer-right">
-            <h3>libraryhub</h3>
+            <h3>@libraryhub</h3>
         </div>
     </div>
 </footer>

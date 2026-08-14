@@ -22,11 +22,11 @@ if(isset($_POST['login'])){
             header("Location: home.php");
             exit();
         }
-    }else{
+    }
 
     	$error = "Invalid email or password!";
-    	}
 }
+    	
 ?>
 
 <!DOCTYPE html>
