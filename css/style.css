@@ -1,12 +1,12 @@
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#fff;
+    background:#e7cfb4;
 }
 
 /* NAVBAR */
 .navbar{
-    background:#1b6e6e;
+    background:#563232;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -93,7 +93,7 @@ body{
 /* FOOTER */
 .site-footer{
     margin-top: 50px;
-    background: #1b6e6e;
+    background: #563232;
     color: #fff;
     padding: 10px 0;
 }
