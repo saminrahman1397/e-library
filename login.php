@@ -39,12 +39,10 @@ if(isset($_POST['login'])){
 
 <body>
 
-<!-- TOP HEADER -->
 <div class="top-bar">
     Library Hub
 </div>
 
-<!-- LOGIN CENTER -->
 <div class="login-container">
 
     <div class="login-box">

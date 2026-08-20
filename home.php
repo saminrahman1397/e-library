@@ -50,7 +50,6 @@ if(!isset($_SESSION['member_id'])){
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <div class="navbar">
     <div class="logo">Library Hub</div>
 
@@ -69,7 +68,6 @@ if(!isset($_SESSION['member_id'])){
     </ul>
 </div>
 
-<!-- ================= HERO SECTION ================= -->
 <section class="hero">
     <h1>University Library Management System</h1>
 
@@ -84,7 +82,6 @@ if(!isset($_SESSION['member_id'])){
     </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
 <section class="services">
     <div class="service-box">
         <i class="fas fa-book"></i>
@@ -100,7 +97,6 @@ if(!isset($_SESSION['member_id'])){
     </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-left">
