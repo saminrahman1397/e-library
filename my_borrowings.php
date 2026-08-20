@@ -19,28 +19,10 @@ if(isset($_POST['return_book'])){
     mysqli_query($conn, "UPDATE BORROWING SET Return_Date = CURDATE() WHERE Borrowing_ID = '$borrowing_id'");
     mysqli_query($conn, "UPDATE BOOK SET Available_Copies = LEAST(Total_Copies, Available_Copies + 1) WHERE Book_ID = '$book_id'");
 
-    // check if it came back late, and create a fine if so
-    $dueResult = mysqli_query($conn, "SELECT Due_Date FROM BORROWING WHERE Borrowing_ID = '$borrowing_id'");
-    $dueRow = mysqli_fetch_assoc($dueResult);
-
-    $overdueResult = mysqli_query($conn, "SELECT DATEDIFF(CURDATE(), '{$dueRow['Due_Date']}') AS days_late");
-    $overdueRow = mysqli_fetch_assoc($overdueResult);
-    $days_late = (int)$overdueRow['days_late'];
-
-    if($days_late > 0){
-        $daily_rate = 10.00; // Taka per day late
-        $fine_amount = $days_late * $daily_rate;
-
-        // generate next Fine_ID (F001, F002, ...)
-        $idResult = mysqli_query($conn, "SELECT MAX(CAST(SUBSTRING(Fine_ID,2) AS UNSIGNED)) AS max_id FROM FINE");
-        $idRow = mysqli_fetch_assoc($idResult);
-        $next_number = ($idRow['max_id'] ?? 0) + 1;
-        $fine_id = "F" . str_pad($next_number, 3, "0", STR_PAD_LEFT);
-
-        mysqli_query($conn, "INSERT INTO FINE (Fine_ID, Borrowing_ID, Overdue_Days, Daily_Fine_Rate, Fine_Amount, Payment_Status)
-                              VALUES ('$fine_id', '$borrowing_id', $days_late, $daily_rate, $fine_amount, 'Unpaid')");
-
-        $message = "Book returned — it was $days_late day(s) late, so a fine of ৳$fine_amount has been added to your account.";
+    // the DB trigger trg_create_fine_on_late_return may have just created a fine — check
+    $fineCheck = mysqli_query($conn, "SELECT Fine_Amount FROM FINE WHERE Borrowing_ID = '$borrowing_id'");
+    if($fineRow = mysqli_fetch_assoc($fineCheck)){
+        $message = "Book returned — it was late, so a fine of ৳{$fineRow['Fine_Amount']} has been added to your account.";
     } else {
         $message = "Book returned on time. Thanks!";
     }
