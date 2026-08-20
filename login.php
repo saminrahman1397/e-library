@@ -24,9 +24,8 @@ if(isset($_POST['login'])){
         }
     }
 
-    	$error = "Invalid email or password!";
+    $error = "Invalid email or password!";
 }
-    	
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +56,7 @@ if(isset($_POST['login'])){
 
         <form method="POST">
 
-            <input type="email" name="email" placeholder="Enter your email:" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
 
             <div>
                 <input type="password" name="password" placeholder="Password" required>
